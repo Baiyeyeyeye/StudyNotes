@@ -84,6 +84,75 @@ fun getScore(tag: String) :Int = when(tag){
 
 
 
+## 循环
+
++ while(与java相同)
++ for-in
+
+```kotlin
+for(i in 0..10){}
+for(j in 0 until 10 step 2)
+for(k in 10 downTo 1)
+```
+
+也可用来遍历集合，跟python中的for-in一样，多了个括号。
+
+## 面向对象
+
+**kotlin中的类默认不可被继承，相当于加了final**
+
+若希望其被继承则加上open:
+
+```kotlin
+open class Person{
+}
+```
+
+继承：
+
+```kotlin
+class Student : Person(){}
+```
+
+接口：
+
+```kotlin
+interface IA{}
+//实现接口与继承一样，不过不用加括号
+class Student : IA{}
+```
+
+
+
+### 权限
+
+默认是public而非包内可见。protected仅对当前类和子类可见。
+
+internal：
+
+只对同一个模块内的类可见。
+
+
+
+### 数据类与单例类
+
+分别用data和object关键字即可
+
+```kotlin
+data class Cell(val num : Int)
+val c = Cell(100)
+
+object SingleTon{
+	//定义数据和操作
+}
+SingleTon.foo()
+//此处并非静态方法调用，而是编译器会自动e构建一个类
+```
+
+
+
+//后面看另外两本书再补充，第一行代码Android讲kotlin实在一般。
+
 
 
 
